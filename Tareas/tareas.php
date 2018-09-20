@@ -22,11 +22,18 @@ function InsertTarea(){
     $completada = 0;
   }
 
+  function BorrarTarea($id_tarea){
+    $db = Connect();
+    $sentencia = $db->prepare( "delete from tarea where id=?");
+    $sentencia->execute(array($id_tarea));
+    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  }
+
   $db = Connect();
   $sentencia = $db->prepare("INSERT INTO tarea(titulo, descripcion, completada) VALUES(?,?,?)");
   $sentencia->execute(array($titulo,$descripcion,$completada));
   header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
 
-echo '<base href="http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]).'/" target="_blank">';
+echo '<base href="http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]).'/">';
  ?>

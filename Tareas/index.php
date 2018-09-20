@@ -24,7 +24,11 @@ function home(){
   <ul class="list-group">
     <?php
     foreach(GetTareas() as $tarea) {
-      echo '<li class="list-group-item disabled">'.$tarea['titulo'].': '.$tarea['descripcion'].'</li>';
+      if ($tarea['completada'] == 1) {
+        echo '<li class="list-group-item disabled"><s>'.$tarea['titulo'].': '.$tarea['descripcion'].'</s></li>';
+      }else {
+        echo '<li class="list-group-item disabled">'.$tarea['titulo'].': '.$tarea['descripcion'].'</li>';
+      }
     }
      ?>
 
@@ -43,7 +47,7 @@ function home(){
       <input type="text" class="form-control" id="DescripcionForm" name="DescripcionForm">
     </div>
     <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="CompletadaForm">
+      <input type="checkbox" class="form-check-input" id="CompletadaForm" name="CompletadaForm">
       <label class="form-check-label" for="exampleCheck1">¿Completada?</label>
     </div>
     <button type="submit" class="btn btn-primary">Enviar tarea</button>
