@@ -1,5 +1,5 @@
 <?php
-require_once "../view/TareasView.php";
+require_once "../view/PeliculasView.php";
 require_once "../model/TareasModel.php";
 
 class TareasController
@@ -9,15 +9,16 @@ class TareasController
   private $Titulo;
   function __construct()
   {
-    $this->view = new TareasView();
+    $this->view = new PeliculasView();
     $this->Titulo = "Lista de Tareas controlador 1";
     $this->model = new TareasModel();
   }
 
   function Home(){
-    $Tareas = $this->model->GetTareas();
-    $this->view->Mostrar($this->Titulo, $Tareas);
+    $Peliculas = $this->model->GetPeliculas();
+    $this->view->Mostrar($this->Titulo, $Peliculas);
   }
+
   function InsertTarea(){
     $titulo = $_POST["TituloForm"];
     $descripcion = $_POST["DescripcionForm"];
@@ -30,12 +31,12 @@ class TareasController
     header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
-  function BorrarTarea($id_tarea){
-    $this->model->BorrarTarea($id_tarea);
+  function BorrarTarea($param){
+    $this->model->BorrarTarea($param[0]);
   }
 
-  function CompletarTarea($id_tarea){
-  $this->model->CompletarTarea($id_tarea);
+  function CompletarTarea($param){
+  $this->model->CompletarTarea($param[0]);
   }
 }
 
