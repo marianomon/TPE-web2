@@ -8,12 +8,18 @@ class TareasModel
   function __construct()
   {
     $this->db = new PDO('mysql:host=localhost;'
-    .'dbname=db_tareas;charset=utf8'
+    .'dbname=db_generos;charset=utf8'
     , 'root', '');
   }
 
-  function GetTareas(){
-    $sentencia = $this->db->prepare( "select * from tarea");
+  function GetPeliculas(){
+    $sentencia = $this->db->prepare( "select * from pelicula");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetGeneros(){
+    $sentencia = $this->db->prepare( "select * from genero");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
