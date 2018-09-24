@@ -18,7 +18,11 @@ class TareasController
     $Peliculas = $this->model->GetPeliculas();
     $Generos = $this->model->GetGeneros();
     $this->view->Mostrar($this->Titulo, $Peliculas, $Generos);
-    
+  }
+
+  function GeneroTerror(){
+    $Peliculas = $this->model->GetPeliculasTerror();
+    $this->view->PaginaTerror($this->Titulo, $Peliculas);
   }
 
   function InsertTarea(){

@@ -11,6 +11,7 @@ class ConfigApp
       'borrar'=> 'TareasController#BorrarTarea',
       'agregar'=> 'TareasController#InsertTarea',
       'completada'=> 'TareasController#CompletarTarea',
+      'Terror'=> 'TareasController#GeneroTerror',
     ];
 }
 

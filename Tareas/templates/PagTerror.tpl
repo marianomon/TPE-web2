@@ -26,11 +26,11 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          {foreach from=$Generos item=genero}
-            <a class="dropdown-item" href="{$genero['nombre']}"> {$genero['nombre']}</a>
+
+            <a class="dropdown-item" href=""> hello</a>
             <div class="dropdown-divider"></div>
 
-          {/foreach}
+
         </div>
       </li>
       <li class="nav-item">

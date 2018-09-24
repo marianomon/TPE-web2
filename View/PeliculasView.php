@@ -11,5 +11,12 @@ class PeliculasView
     $smarty->display('templates/home.tpl');
 
   }
+
+  function PaginaTerror($Titulo, $Peliculas){
+    $smarty = new Smarty();
+    $smarty->assign('Peliculas',$Peliculas);
+    $smarty->assign('Titulo',$Titulo);
+    $smarty->display('templates/PagTerror.tpl');
+  }
 }
   ?>
