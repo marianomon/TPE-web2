@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-24 23:41:37
+/* Smarty version 3.1.33, created on 2018-09-25 03:40:29
   from 'C:\xampp\htdocs\proyectos\PDO\Tareas\templates\PagTerror.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ba95a117d6aa3_44288188',
+  'unifunc' => 'content_5ba9920d101d87_44820303',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a691fa93472614a24b67031e25af627f9c996b30' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Tareas\\templates\\PagTerror.tpl',
-      1 => 1537825294,
+      1 => 1537839628,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ba95a117d6aa3_44288188 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ba9920d101d87_44820303 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -30,7 +30,7 @@ function content_5ba95a117d6aa3_44288188 (Smarty_Internal_Template $_smarty_tpl)
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">MisPelis</a>
+  <a class="navbar-brand" href="home">MisPelis</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,7 +38,7 @@ function content_5ba95a117d6aa3_44288188 (Smarty_Internal_Template $_smarty_tpl)
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estrenos</a>
@@ -48,11 +48,20 @@ function content_5ba95a117d6aa3_44288188 (Smarty_Internal_Template $_smarty_tpl)
           Género
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
-            <a class="dropdown-item" href=""> hello</a>
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Generos']->value, 'genero');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['genero']->value) {
+?>
+            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['genero']->value['nombre'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['genero']->value['nombre'];?>
+</a>
             <div class="dropdown-divider"></div>
 
+          <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
         </div>
       </li>
@@ -75,10 +84,9 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['pelicula']->value) {
 ?>
-          <div class="col-3"> <h1> -- <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
- -- <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
- ---- <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['actores'];?>
- </h1></div>;
+          <div class="col-3"> <img src="imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
+.jpg" width="300px"alt=""><?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
+</div>;
         <?php
 }
 }

@@ -4,10 +4,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="utf-8">
     <title></title>
+    <base href="">
+    <link rel="stylesheet" type"text/css" href="../CSS/Estilos.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">MisPelis</a>
+  <a class="navbar-brand" href="home">MisPelis</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,7 +17,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estrenos</a>
@@ -47,7 +49,7 @@
   {$Titulo}
   <div class="row">
         {foreach from=$Peliculas item=pelicula}
-          <div class="col-3"> <h1> -- {$pelicula['nombre']} -- {$pelicula['sinopsis']} ---- {$pelicula['actores']} </h1></div>;
+          <div class="col-3 RecuadroPelicula"><a href="#"> <img src="imagenes/{$pelicula['nombre']}.jpg" width="300px" alt=""> -- {$pelicula['nombre']} </a> </div>;
         {/foreach}
   </div>
 </div>

@@ -24,6 +24,7 @@ class TareasModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  
   function GetGeneros(){
     $sentencia = $this->db->prepare( "select * from genero");
     $sentencia->execute();

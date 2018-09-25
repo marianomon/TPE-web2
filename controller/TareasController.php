@@ -14,15 +14,39 @@ class TareasController
     $this->model = new TareasModel();
   }
 
-  function Home(){
+  function Home($dato){
+    if ($dato == 1) {
+      GeneroTerror();
+    }else {
+
     $Peliculas = $this->model->GetPeliculas();
     $Generos = $this->model->GetGeneros();
     $this->view->Mostrar($this->Titulo, $Peliculas, $Generos);
   }
+}
 
   function GeneroTerror(){
     $Peliculas = $this->model->GetPeliculasTerror();
-    $this->view->PaginaTerror($this->Titulo, $Peliculas);
+    $Generos = $this->model->GetGeneros();
+    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
+  }
+
+  function GeneroDrama(){
+    $Peliculas = $this->model->GetPeliculasDrama();
+    $Generos = $this->model->GetGeneros();
+    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
+  }
+
+  function GeneroAccion(){
+    $Peliculas = $this->model->GetPeliculasAccion();
+    $Generos = $this->model->GetGeneros();
+    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
+  }
+
+  function GeneroComedia(){
+    $Peliculas = $this->model->GetPeliculasComedia();
+    $Generos = $this->model->GetGeneros();
+    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
   }
 
   function InsertTarea(){

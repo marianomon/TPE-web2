@@ -12,6 +12,9 @@ class ConfigApp
       'agregar'=> 'TareasController#InsertTarea',
       'completada'=> 'TareasController#CompletarTarea',
       'Terror'=> 'TareasController#GeneroTerror',
+      'Accion'=> 'TareasController#GeneroAccion',
+      'Drama'=> 'TareasController#GeneroDrama',
+      'Comedia'=> 'TareasController#GeneroComedia',
     ];
 }
 
