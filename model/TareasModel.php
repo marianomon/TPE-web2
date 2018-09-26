@@ -18,13 +18,13 @@ class TareasModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function GetPeliculasTerror(){
-    $sentencia = $this->db->prepare( "select * from pelicula WHERE id_genero = 6");
+  function GetPeliculasTerror($NumeroGenero){
+    $sentencia = $this->db->prepare( "select * from pelicula WHERE id_genero = $NumeroGenero");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  
+
   function GetGeneros(){
     $sentencia = $this->db->prepare( "select * from genero");
     $sentencia->execute();
