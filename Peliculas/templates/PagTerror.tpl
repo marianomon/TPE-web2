@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type"text/css" href="CSS/Estilos.css">
+    <link rel="stylesheet" type"text/css" href="../css/Style.css">
 
     <title></title>
   </head>
@@ -17,7 +17,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="http://localhost/proyectos/PDO/Peliculas/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estrenos</a>
@@ -28,7 +28,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           {foreach from=$Generos item=genero}
-            <a class="dropdown-item" href="{$genero['nombre']}"> {$genero['nombre']}</a>
+            <a class="dropdown-item" href="{$genero['id_genero']}"> {$genero['nombre']}</a>
             <div class="dropdown-divider"></div>
 
           {/foreach}
@@ -49,7 +49,8 @@
   {$Titulo}
   <div class="row">
         {foreach from=$Peliculas item=pelicula}
-          <div class="col-3 RecuadroPelicula"> <img src="imagenes/{$pelicula['nombre']}.jpg" width="250px"alt="">{$pelicula['nombre']}</div>
+          <div class="col-3 RecuadroPelicula"> <img src="../imagenes/{$pelicula['nombre']}.jpg" width="250px"alt="">{$pelicula['nombre']}</div>
+
         {/foreach}
   </div>
 </div>

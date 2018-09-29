@@ -5,6 +5,7 @@ define('PARAMS', 1);
 
 require_once "config/ConfigApp.php";
 require_once "../Controller/PelisController.php";
+require_once "../Controller/LoginController.php";
 
 function parseURL($url)
 {

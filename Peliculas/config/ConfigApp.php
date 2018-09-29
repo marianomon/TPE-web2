@@ -13,9 +13,14 @@ class ConfigApp
       'agregar'=> 'PelisController#InsertTarea',
       'completada'=> 'PelisController#CompletarTarea',
       'Terror'=> 'PelisController#GeneroTerror',
+      'LogIn'=> 'LoginController#login',
+      'verificarLogin'=>'LoginController#verificarLogin',
+      
       'Accion'=> 'PelisController#GeneroAccion',
       'Drama'=> 'PelisController#GeneroDrama',
-      'Comedia'=> 'PelisController#GeneroComedia',
+      'Comedia'=> 'PelisController#GenerarGenero',
+      'genero'=> 'PelisController#GenerarGenero',
+
     ];
 }
 

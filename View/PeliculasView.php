@@ -3,6 +3,12 @@
 require('libs/Smarty.class.php');
 class PeliculasView
 {
+  private $Smarty;
+  function __construct(){
+    $this->Smarty = new Smarty();
+
+  }
+
   function Mostrar($Titulo, $Peliculas, $Generos){
     $smarty = new Smarty();
     $smarty->assign('Titulo',$Titulo);

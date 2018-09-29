@@ -18,9 +18,9 @@ class PelisModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function GetPeliculasTerror($NumeroGenero){
-    $sentencia = $this->db->prepare( "select * from pelicula WHERE id_genero = $NumeroGenero");
-    $sentencia->execute();
+  function GetPeliculasTerror($PARAMS  =  ''){
+    $sentencia = $this->db->prepare( "select * from pelicula WHERE id_genero = ?");
+    $sentencia->execute(array($PARAMS[0]));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 

@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="http://localhost/proyectos/PDO/Peliculas/css/Style.css">
+    <link rel="stylesheet" type"text/css" href="../Peliculas/CSS/Stle.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,7 +16,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="http://localhost/proyectos/PDO/Peliculas/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estrenos</a>
@@ -28,7 +28,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
           {foreach from=$Generos item=genero}
-            <a class="dropdown-item" href="genero/{$genero['id_genero']}"> {$genero['nombre']}</a>
+            <a class="dropdown-item" href="{$genero['nombre']}"> {$genero['nombre']}</a>
             <div class="dropdown-divider"></div>
 
           {/foreach}
@@ -41,12 +41,21 @@
       <a type="button" href="LogIn" class="btn btn-success nav-link">LogIn</a>
   </div>
 </nav>
-<div class="container-fluid">
-  {$Titulo}
-  <div class="row">
-        {foreach from=$Peliculas item=pelicula}
-          <div class="col-2 RecuadroPelicula"><a href="#"> <img src="imagenes/{$pelicula['nombre']}.jpg" width="250px" alt=""></a> {$pelicula['nombre']} </div>
-        {/foreach}
+<div class="container">
+        <form method="post" action="verificarLogin">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Usuario</label>
+            <input type="input" class="form-control" id="usuario" name="usuario" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Password">
+            {$Mensaje_Error}
+          </div>
+          <button type="submit" class="btn btn-primary">LogIn</button>
+        </form>
+
   </div>
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

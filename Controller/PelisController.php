@@ -7,44 +7,26 @@ class PelisController
   private $view;
   private $model;
   private $Titulo;
+  
   function __construct()
   {
     $this->view = new PeliculasView();
-    $this->Titulo = "Lista de Tareas controlador 1";
+    $this->Titulo = "Bienvenido a MisPelis!!";
     $this->model = new PelisModel();
   }
 
-  function Home(){
+function Home(){
     $Peliculas = $this->model->GetPeliculas();
     $Generos = $this->model->GetGeneros();
     $this->view->Mostrar($this->Titulo, $Peliculas, $Generos);
 }
 
-  function GeneroTerror(){
-    $NumeroGenero = 6;
-    $Peliculas = $this->model->GetPeliculasTerror($NumeroGenero);
-    $Generos = $this->model->GetGeneros();
-    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
-  }
-  function GeneroDrama(){
-    $NumeroGenero = 5;
-    $Peliculas = $this->model->GetPeliculasTerror($NumeroGenero);
-    $Generos = $this->model->GetGeneros();
-    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
-  }
-  function GeneroComedia(){
-    $NumeroGenero = 7;
-    $Peliculas = $this->model->GetPeliculasTerror($NumeroGenero);
-    $Generos = $this->model->GetGeneros();
-    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
-  }
+function GenerarGenero($PARAMS){
+  $Peliculas = $this->model->GetPeliculasTerror($PARAMS);
+  $Generos = $this->model->GetGeneros();
+  $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
+}
 
-  function GeneroAccion(){
-    $NumeroGenero = 1;
-    $Peliculas = $this->model->GetPeliculasTerror($NumeroGenero);
-    $Generos = $this->model->GetGeneros();
-    $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
-  }
 
   function InsertTarea(){
     $titulo = $_POST["TituloForm"];
