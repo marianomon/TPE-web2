@@ -44,8 +44,8 @@ class PelisModel
   }
 
   function ActualizarMovie($id_pelicula, $sinopsis){
-    $sentencia = $this->db->prepare( "update pelicula set sinopsis[$sinopsis] where id_pelicula=?");
-    $sentencia->execute(array($id_pelicula[0]));
+    $sentencia = $this->db->prepare( "update pelicula set sinopsis=? where id_pelicula=?");
+    $sentencia->execute(array($sinopsis, $id_pelicula[0]));
     header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/PeliculaSeleccionadaAdmin/$id_pelicula[0]");
   }
 

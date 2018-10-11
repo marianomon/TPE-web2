@@ -62,7 +62,9 @@ function AgregarPelicula(){
 
   function ActualizarPelicula($param){
     $sinopsis = $_POST["Editado"];
+    var_dump($param, $sinopsis);
     $this->model->ActualizarMovie($param, $sinopsis);
+
 
   }
 

@@ -14,3 +14,9 @@
 .NombrePelicula{
   font-size: 40px;
 }
+
+.formsinopsis{
+  height: 400px;
+  width: 700px;
+  text-align: left;
+}

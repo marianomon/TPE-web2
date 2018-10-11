@@ -53,15 +53,18 @@
         <div class="col-3 fotopelicula">
           <h1 class="NombrePelicula">{$pelicula['nombre']}</h1>
           <img src="../imagenes/{$pelicula['nombre']}.jpg" width="250px" alt="">
-          <form method="put" action="{$root}/ActualizarPelicula/{$pelicula['id_pelicula']}">
+        </div>
+        <div class="col-5 Sinopsis">
+          <form method="post" action="{$root}/ActualizarPelicula/{$pelicula['id_pelicula']} " id="formsinopsis">
 
             <div class="form-group">
               <label for="exampleInputPassword1">Sinopsis</label>
-              <input type="text" class="form-control" id="Editado" name="Editado" value="{$pelicula['sinopsis']}">
-
+              <textarea cols="100" rows="15" form="formsinopsis" id="Editado" name="Editado"> {$pelicula['sinopsis']} </textarea>
+              <!-- <input type="textarea" class="form-control formsinopsis" id="Editado" name="Editado" value="{$pelicula['sinopsis']}"> -->
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
+
         </div>
   </div>
   {/foreach}

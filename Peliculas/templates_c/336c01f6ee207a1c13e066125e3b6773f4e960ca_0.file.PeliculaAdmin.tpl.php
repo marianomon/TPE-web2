@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-11 23:30:45
+/* Smarty version 3.1.33, created on 2018-10-12 01:46:29
   from 'C:\xampp\htdocs\proyectos\PDO\Peliculas\templates\PeliculaAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbfc1057874c5_77513417',
+  'unifunc' => 'content_5bbfe0d5e58a25_89836544',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '336c01f6ee207a1c13e066125e3b6773f4e960ca' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Peliculas\\templates\\PeliculaAdmin.tpl',
-      1 => 1539293400,
+      1 => 1539301588,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbfc1057874c5_77513417 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbfe0d5e58a25_89836544 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -91,18 +91,23 @@ foreach ($_from as $_smarty_tpl->tpl_vars['pelicula']->value) {
 </h1>
           <img src="../imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
 .jpg" width="250px" alt="">
-          <form method="put" action="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+        </div>
+        <div class="col-5 Sinopsis">
+          <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /ActualizarPelicula/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['id_pelicula'];?>
-">
+ " id="formsinopsis">
 
             <div class="form-group">
               <label for="exampleInputPassword1">Sinopsis</label>
-              <input type="text" class="form-control" id="Editado" name="Editado" value="<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
-">
+              <textarea cols="100" rows="15" form="formsinopsis" id="Editado" name="Editado"> <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
+ </textarea>
+              <!-- <input type="textarea" class="form-control formsinopsis" id="Editado" name="Editado" value="<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
+"> -->
 
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
+
         </div>
   </div>
   <?php
