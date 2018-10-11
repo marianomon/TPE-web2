@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type"text/css" href="../css/Style.css">
-
+    <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="http://localhost/proyectos/PDO/Peliculas/css/Style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,7 +16,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{$root}/home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="http://localhost/proyectos/PDO/Peliculas/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estrenos</a>
@@ -27,30 +26,32 @@
           Género
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
           {foreach from=$Generos item=genero}
-            <a class="dropdown-item" href="{$genero['id_genero']}"> {$genero['nombre']}</a>
+            <a class="dropdown-item" href="genero/{$genero['id_genero']}"> {$genero['nombre']}</a>
             <div class="dropdown-divider"></div>
 
           {/foreach}
-
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Sobre MisPelis</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AgregarPelicula">Agregar Pelicula</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="EliminarPelicula">Eliminar Pelicula</a>
+      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LogIn</button>
-    </form>
+      <a type="button" href="LogOut" class="btn btn-success nav-link">LogOut</a>
   </div>
 </nav>
-<div class="container">
+<div class="container-fluid">
   {$Titulo}
   <div class="row">
         {foreach from=$Peliculas item=pelicula}
-          <div class="col-3 RecuadroPelicula"> <img src="../imagenes/{$pelicula['nombre']}.jpg" width="250px"alt="">{$pelicula['nombre']}</div>
-
+          <div class="col-2 RecuadroPelicula"> <a href="borrar/{$pelicula['id_pelicula']}">Borrar</a> <a href="PeliculaSeleccionadaAdmin/{$pelicula['id_pelicula']}"> <img src="imagenes/{$pelicula['nombre']}.jpg" width="250px" alt=""></a> {$pelicula['nombre']} </div>
         {/foreach}
   </div>
 </div>

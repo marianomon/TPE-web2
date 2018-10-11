@@ -6,7 +6,11 @@
   background-color: rgb(255, 82, 82);
 }
 
-.container{
+.contenedor{
   background-color: rgb(66, 66, 66);
   text-align: center;
+}
+
+.NombrePelicula{
+  font-size: 40px;
 }

@@ -7,7 +7,7 @@ class PelisController
   private $view;
   private $model;
   private $Titulo;
-  
+
   function __construct()
   {
     $this->view = new PeliculasView();
@@ -27,6 +27,16 @@ function GenerarGenero($PARAMS){
   $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
 }
 
+function PelisAdmin(){
+  $Peliculas = $this->model->GetPeliculas();
+  $Generos = $this->model->GetGeneros();
+  $this->view->MostrarAdmin($this->Titulo, $Peliculas, $Generos);
+}
+
+function AgregarPelicula(){
+
+}
+
 
   function InsertTarea(){
     $titulo = $_POST["TituloForm"];
@@ -40,8 +50,20 @@ function GenerarGenero($PARAMS){
     header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
-  function BorrarTarea($param){
-    $this->model->BorrarTarea($param[0]);
+  function MostrarPeliculaAdmin($param){
+    $Peliculas = $this->model->MostrarPeliculaAdmin($param[0]);
+    $Generos = $this->model->GetGeneros();
+    $this->view->MostrarPeliculaAdmin($this->Titulo, $Peliculas, $Generos);
+  }
+
+  function BorrarPelicula($param){
+    $this->model->BorrarPelicula($param[0]);
+  }
+
+  function ActualizarPelicula($param){
+    $sinopsis = $_POST["Editado"];
+    $this->model->ActualizarMovie($param, $sinopsis);
+
   }
 
   function CompletarTarea($param){

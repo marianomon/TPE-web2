@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 01:04:52
+/* Smarty version 3.1.33, created on 2018-10-02 01:10:01
   from 'C:\xampp\htdocs\proyectos\PDO\Peliculas\templates\PagTerror.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5baabf14e9a272_61992918',
+  'unifunc' => 'content_5bb2a949c36204_58270375',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c95bfbf55fe422a5bd0d3618ec2ce5e6accfe057' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Peliculas\\templates\\PagTerror.tpl',
-      1 => 1537916502,
+      1 => 1538435304,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5baabf14e9a272_61992918 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb2a949c36204_58270375 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type"text/css" href="CSS/Estilos.css">
+    <link rel="stylesheet" type"text/css" href="../css/Style.css">
 
     <title></title>
   </head>
@@ -40,7 +40,8 @@ function content_5baabf14e9a272_61992918 (Smarty_Internal_Template $_smarty_tpl)
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estrenos</a>
@@ -55,7 +56,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['genero']->value) {
 ?>
-            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['genero']->value['nombre'];?>
+            <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['genero']->value['id_genero'];?>
 "> <?php echo $_smarty_tpl->tpl_vars['genero']->value['nombre'];?>
 </a>
             <div class="dropdown-divider"></div>
@@ -86,9 +87,10 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['pelicula']->value) {
 ?>
-          <div class="col-3 RecuadroPelicula"> <img src="imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
+          <div class="col-3 RecuadroPelicula"> <img src="../imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
 .jpg" width="250px"alt=""><?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
 </div>
+
         <?php
 }
 }

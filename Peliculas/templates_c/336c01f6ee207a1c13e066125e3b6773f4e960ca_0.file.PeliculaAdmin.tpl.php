@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-29 05:24:44
-  from 'C:\xampp\htdocs\proyectos\PDO\Peliculas\templates\home.tpl' */
+/* Smarty version 3.1.33, created on 2018-10-11 23:30:45
+  from 'C:\xampp\htdocs\proyectos\PDO\Peliculas\templates\PeliculaAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5baef07c939770_70149323',
+  'unifunc' => 'content_5bbfc1057874c5_77513417',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5e9d9add7e2226b318faeb125dd9c2ba04b2e547' => 
+    '336c01f6ee207a1c13e066125e3b6773f4e960ca' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Peliculas\\templates\\home.tpl',
-      1 => 1538191482,
+      0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Peliculas\\templates\\PeliculaAdmin.tpl',
+      1 => 1539293400,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5baef07c939770_70149323 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbfc1057874c5_77513417 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -69,27 +69,46 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Sobre MisPelis</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AgregarPelicula">Agregar Pelicula</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="EliminarPelicula">Eliminar Pelicula</a>
+      </li>
     </ul>
-      <a type="button" href="LogIn" class="btn btn-success nav-link">LogIn</a>
+      <a type="button" href="LogOut" class="btn btn-success nav-link">LogOut</a>
   </div>
 </nav>
-<div class="container-fluid">
-  <?php echo $_smarty_tpl->tpl_vars['Titulo']->value;?>
-
-  <div class="row">
-        <?php
+<div class="container-fluid contenedor">
+  <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Peliculas']->value, 'pelicula');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['pelicula']->value) {
 ?>
-          <div class="col-2 RecuadroPelicula"><a href="#"> <img src="imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
-.jpg" width="250px" alt=""></a> <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
- </div>
-        <?php
+  <div class="row">
+        <div class="col-3 fotopelicula">
+          <h1 class="NombrePelicula"><?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
+</h1>
+          <img src="../imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
+.jpg" width="250px" alt="">
+          <form method="put" action="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/ActualizarPelicula/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['id_pelicula'];?>
+">
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Sinopsis</label>
+              <input type="text" class="form-control" id="Editado" name="Editado" value="<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
+">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+  </div>
+  <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-  </div>
 </div>
     <?php echo '<script'; ?>
  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
