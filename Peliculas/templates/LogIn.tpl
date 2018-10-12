@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type"text/css" href="../Peliculas/CSS/Stle.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/proyectos/PDO/Peliculas/css/Style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,10 +38,12 @@
         <a class="nav-link disabled" href="#">Sobre MisPelis</a>
       </li>
     </ul>
-      <a type="button" href="LogIn" class="btn btn-success nav-link">LogIn</a>
   </div>
 </nav>
-<div class="container">
+<div class="container-fluid FondoGrisOscuro LetrasBlancas">
+  <div class="row justify-content-md-center">
+    <div class="col-5 FormLog">
+
         <form method="post" action="verificarLogin">
           <div class="form-group">
             <label for="exampleInputEmail1">Usuario</label>
@@ -55,6 +57,8 @@
           </div>
           <button type="submit" class="btn btn-primary">LogIn</button>
         </form>
+      </div>
+    </div>
 
   </div>
 </div>

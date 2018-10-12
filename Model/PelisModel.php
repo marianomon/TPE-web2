@@ -24,6 +24,12 @@ class PelisModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function GetGeneroSeleccionado($PARAMS = ''){
+    $sentencia = $this->db->prepare( "select * from genero WHERE id_genero = ?");
+    $sentencia->execute(array($PARAMS[0]));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
 
   function GetGeneros(){
     $sentencia = $this->db->prepare( "select * from genero");
@@ -46,7 +52,7 @@ class PelisModel
   function ActualizarMovie($id_pelicula, $sinopsis){
     $sentencia = $this->db->prepare( "update pelicula set sinopsis=? where id_pelicula=?");
     $sentencia->execute(array($sinopsis, $id_pelicula[0]));
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/PeliculaSeleccionadaAdmin/$id_pelicula[0]");
+    header(HOME . "/PeliculaSeleccionadaAdmin/$id_pelicula[0]");
   }
 
   function InsertTarea($titulo,$descripcion,$completada){
@@ -57,7 +63,7 @@ class PelisModel
   function CompletarTarea($id_tarea){
     $sentencia = $this->db->prepare( "update tarea set completada=1 where id=?");
     $sentencia->execute(array($id_tarea));
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    header(HOME);
   }
 }
 

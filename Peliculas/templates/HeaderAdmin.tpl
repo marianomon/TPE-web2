@@ -16,7 +16,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href={$root}>Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href={$root}/admin>Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estrenos</a>
@@ -26,8 +26,9 @@
           Género
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
           {foreach from=$Generos item=genero}
-            <a class="dropdown-item" href={$root}/genero/{$genero['id_genero']}> {$genero['nombre']}</a>
+            <a class="dropdown-item" href="genero/{$genero['id_genero']}"> {$genero['nombre']}</a>
             <div class="dropdown-divider"></div>
 
           {/foreach}
@@ -36,7 +37,13 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Sobre MisPelis</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AgregarPelicula">Agregar Pelicula</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="EliminarPelicula">Eliminar Pelicula</a>
+      </li>
     </ul>
-      <a type="button" href="{$root}/LogIn" class="btn btn-primary">LogIn</a>
+      <a type="button" href="LogOut" class="btn btn-primary nav-link">LogOut</a>
   </div>
 </nav>

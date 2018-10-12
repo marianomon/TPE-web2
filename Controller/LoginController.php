@@ -3,6 +3,9 @@
 require_once "../View/LoginView.php";
 require_once "../Model/LoginModel.php";
 
+
+
+
 class LoginController
 {
 
@@ -29,7 +32,9 @@ function verificarLogin(){
 
   if (isset($db_usuario)) {
     if (password_verify($pass, $db_usuario[0]["pass"])){
-      header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/admin");
+      session_start();
+      $_SESSION["usuario"] = "$usuario";
+      header(HOMEADMIN);
     }else {
       $Generos = $this->model->GetGeneros();
       $this->view->mostrarLogin($this->Titulo, $Generos, "contraseña incorrecta");

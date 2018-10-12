@@ -1,6 +1,12 @@
 <?php
 
 
+define('HOME', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+define('HOMEADMIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/admin');
+define('LOGIN', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/LogIn');
+define('LOGOUT', 'Location: http://'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/LogOut');
+
+
 class ConfigApp
 {
 
@@ -14,11 +20,12 @@ class ConfigApp
       'completada'=> 'PelisController#CompletarTarea',
       'LogIn'=> 'LoginController#login',
       'verificarLogin'=>'LoginController#verificarLogin',
-      'admin'=>'PelisController#PelisAdmin',
-      'LogOut'=>'PelisController#Home',
-      'AgregarPelicula'=>'PelisController#AgregarPelicula',
-      'PeliculaSeleccionadaAdmin'=>'PelisController#MostrarPeliculaAdmin',
-      'ActualizarPelicula'=>'PelisController#ActualizarPelicula', 
+      'LogOut'=>'AdminController#Logout',
+
+      'admin'=>'AdminController#PelisAdmin',
+      'AgregarPelicula'=>'AdminController#AgregarPelicula',
+      'PeliculaSeleccionadaAdmin'=>'AdminController#MostrarPeliculaAdmin',
+      'ActualizarPelicula'=>'AdminController#ActualizarPelicula',
 
       'genero'=> 'PelisController#GenerarGenero',
 

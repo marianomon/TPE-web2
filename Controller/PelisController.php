@@ -1,6 +1,8 @@
 <?php
+
 require_once "../view/PeliculasView.php";
 require_once "../model/PelisModel.php";
+
 
 class PelisController
 {
@@ -24,14 +26,10 @@ function Home(){
 function GenerarGenero($PARAMS){
   $Peliculas = $this->model->GetPeliculasTerror($PARAMS);
   $Generos = $this->model->GetGeneros();
-  $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos);
+  $GeneroSeleccionado = $this->model->GetGeneroSeleccionado($PARAMS);
+  $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos, $GeneroSeleccionado);
 }
 
-function PelisAdmin(){
-  $Peliculas = $this->model->GetPeliculas();
-  $Generos = $this->model->GetGeneros();
-  $this->view->MostrarAdmin($this->Titulo, $Peliculas, $Generos);
-}
 
 function AgregarPelicula(){
 
@@ -50,27 +48,26 @@ function AgregarPelicula(){
     header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
-  function MostrarPeliculaAdmin($param){
-    $Peliculas = $this->model->MostrarPeliculaAdmin($param[0]);
-    $Generos = $this->model->GetGeneros();
-    $this->view->MostrarPeliculaAdmin($this->Titulo, $Peliculas, $Generos);
-  }
-
-  function BorrarPelicula($param){
-    $this->model->BorrarPelicula($param[0]);
-  }
-
-  function ActualizarPelicula($param){
-    $sinopsis = $_POST["Editado"];
-    var_dump($param, $sinopsis);
-    $this->model->ActualizarMovie($param, $sinopsis);
-
-
-  }
-
-  function CompletarTarea($param){
-  $this->model->CompletarTarea($param[0]);
-  }
+  // function MostrarPeliculaAdmin($param){
+  //   $Peliculas = $this->model->MostrarPeliculaAdmin($param[0]);
+  //   $Generos = $this->model->GetGeneros();
+  //   $this->view->MostrarPeliculaAdmin($this->Titulo, $Peliculas, $Generos);
+  // }
+  //
+  // function BorrarPelicula($param){
+  //   $this->model->BorrarPelicula($param[0]);
+  // }
+  //
+  // function ActualizarPelicula($param){
+  //   $sinopsis = $_POST["Editado"];
+  //   $this->model->ActualizarMovie($param, $sinopsis);
+  // }
+  //
+  // function PelisAdmin(){
+  //   $Peliculas = $this->model->GetPeliculas();
+  //   $Generos = $this->model->GetGeneros();
+  //   $this->view->MostrarAdmin($this->Titulo, $Peliculas, $Generos);
+  // }
 }
 
  ?>

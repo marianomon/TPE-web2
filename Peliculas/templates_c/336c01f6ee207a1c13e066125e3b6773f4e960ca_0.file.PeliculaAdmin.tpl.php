@@ -1,112 +1,65 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-12 01:46:29
+/* Smarty version 3.1.33, created on 2018-10-13 01:09:57
   from 'C:\xampp\htdocs\proyectos\PDO\Peliculas\templates\PeliculaAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbfe0d5e58a25_89836544',
+  'unifunc' => 'content_5bc129c565e934_84752927',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '336c01f6ee207a1c13e066125e3b6773f4e960ca' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Peliculas\\templates\\PeliculaAdmin.tpl',
-      1 => 1539301588,
+      1 => 1539385790,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:HeaderAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_5bbfe0d5e58a25_89836544 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="http://localhost/proyectos/PDO/Peliculas/css/Style.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="home">MisPelis</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://localhost/proyectos/PDO/Peliculas/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Estrenos</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Género
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-          <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Generos']->value, 'genero');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['genero']->value) {
+function content_5bc129c565e934_84752927 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:HeaderAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-            <a class="dropdown-item" href="genero/<?php echo $_smarty_tpl->tpl_vars['genero']->value['id_genero'];?>
-"> <?php echo $_smarty_tpl->tpl_vars['genero']->value['nombre'];?>
-</a>
-            <div class="dropdown-divider"></div>
+<div class="Espaciado FondoGrisOscuro">
 
-          <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Sobre MisPelis</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="AgregarPelicula">Agregar Pelicula</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="EliminarPelicula">Eliminar Pelicula</a>
-      </li>
-    </ul>
-      <a type="button" href="LogOut" class="btn btn-success nav-link">LogOut</a>
-  </div>
-</nav>
-<div class="container-fluid contenedor">
+</div>
+<div class="container-fluid contenedor FondoGrisOscuro">
   <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Peliculas']->value, 'pelicula');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['pelicula']->value) {
 ?>
-  <div class="row">
-        <div class="col-3 fotopelicula">
+  <div class="row justify-content-md-center">
+        <div class="col-2 padding15px fondoGrisClaro">
           <h1 class="NombrePelicula"><?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
 </h1>
-          <img src="../imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
-.jpg" width="250px" alt="">
+          <img class="imagendepelicula" src="../imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
+.jpg" alt="">
         </div>
-        <div class="col-5 Sinopsis">
-          <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+        <div class="col-5">
+          <form class="fondoGrisClaro padding15px" method="post" action="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
 /ActualizarPelicula/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['id_pelicula'];?>
  " id="formsinopsis">
 
             <div class="form-group">
-              <label for="exampleInputPassword1">Sinopsis</label>
-              <textarea cols="100" rows="15" form="formsinopsis" id="Editado" name="Editado"> <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
- </textarea>
+              <label class="LetrasBlancas letra30px">Sinopsis</label>
+              <textarea class="TextAreaPelicula LetrasBlancas" cols="90" rows="13" form="formsinopsis" id="Editado" name="Editado"><?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
+</textarea>
               <!-- <input type="textarea" class="form-control formsinopsis" id="Editado" name="Editado" value="<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['sinopsis'];?>
 "> -->
-
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
+        </div>
+        <div class="Espaciado FondoGrisOscuro">
+
+        </div>
+        <div class="col-7 CuadroIframe fondoGrisClaro">
+          <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['iFrame'];?>
 
         </div>
   </div>

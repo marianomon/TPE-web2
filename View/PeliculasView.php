@@ -7,7 +7,6 @@ class PeliculasView
   function __construct(){
     $this->Smarty = new Smarty();
     $this->Smarty->assign('root', dirname($_SERVER["PHP_SELF"]));
-  
 
   }
 
@@ -34,10 +33,11 @@ class PeliculasView
     $this->Smarty->display('templates/PeliculaAdmin.tpl');
   }
 
-  function PaginaTerror($Titulo, $Peliculas, $Generos){
+  function PaginaTerror($Titulo, $Peliculas, $Generos, $GeneroSeleccionado){
     $this->Smarty->assign('Peliculas',$Peliculas);
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->assign('Generos',$Generos);
+    $this->Smarty->assign('GeneroSeleccionado',$GeneroSeleccionado);
     $this->Smarty->display('templates/PagTerror.tpl');
   }
 }

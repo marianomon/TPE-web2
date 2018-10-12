@@ -8,6 +8,7 @@ class LoginView
   function __construct()
   {
     $this->Smarty = new Smarty();
+    $this->Smarty->assign('root', dirname($_SERVER["PHP_SELF"]));
   }
 
   function mostrarLogin($Titulo, $Generos, $Mensaje_Error=''){
