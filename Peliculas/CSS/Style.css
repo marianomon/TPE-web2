@@ -6,8 +6,17 @@
   background-color: rgb(255, 82, 82);
 }
 
-.contenedor{
+.LetrasMedianas{
+  font-size: 27px;
+  color: rgb(126, 126, 126);
+}
 
+.LetrasChicas{
+  font-size: 20px;
+  color: rgb(126, 126, 126);
+  text-align: left;
+}
+.contenedor{
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -31,15 +40,39 @@ html{
 .CuadroIframe{
   padding: 20px;
   margin-top: 10px;
-
 }
 
 .NombrePelicula{
   font-size: 40px;
 }
 
+.LetrasGrandes{
+  font-size: 55px;
+  font-family: sans-serif;
+}
+.estrenos{
+
+}
+
 .padding15px{
   padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.height-sinopsis{
+  height: 390px;
+}
+
+.padding-bottom{
+  padding-bottom: 25px;
+}
+
+.margin-1{
+  margin-bottom: -1rem;
+}
+
+.padding-top{
+  padding-top: 25px;
 }
 
 .imagendepelicula{
@@ -49,6 +82,7 @@ html{
 .TituloPelicula{
   font-size: 35px;
   font-family: monospace;
+  color: black;
 }
 
 .Titulo{

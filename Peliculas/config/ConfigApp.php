@@ -15,17 +15,23 @@ class ConfigApp
     public static $ACTIONS = [
       ''=> 'PelisController#Home',
       'home'=> 'PelisController#Home',
-      'borrar'=> 'PelisController#BorrarPelicula',
-      'agregar'=> 'PelisController#InsertTarea',
-      'completada'=> 'PelisController#CompletarTarea',
+
       'LogIn'=> 'LoginController#login',
       'verificarLogin'=>'LoginController#verificarLogin',
       'LogOut'=>'AdminController#Logout',
 
+      'generoAdmin'=>'AdminController#GenerarGeneroAdmin',
       'admin'=>'AdminController#PelisAdmin',
-      'AgregarPelicula'=>'AdminController#AgregarPelicula',
-      'PeliculaSeleccionadaAdmin'=>'AdminController#MostrarPeliculaAdmin',
+
       'ActualizarPelicula'=>'AdminController#ActualizarPelicula',
+      'AgregarPelicula'=>'AdminController#AgregarPelicula',
+      'FormularioAgregarPelicula'=>'AdminController#FormularioAgregarPelicula',
+      'borrar'=> 'AdminController#BorrarPelicula',
+
+      'PeliculaSeleccionada'=>'PelisController#PeliculaSeleccionada',
+      'PeliculaSeleccionadaAdmin'=>'AdminController#MostrarPeliculaAdmin',
+
+      'estrenos'=>'PelisController#MostrarEstrenos',
 
       'genero'=> 'PelisController#GenerarGenero',
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-13 00:57:35
+/* Smarty version 3.1.33, created on 2018-10-17 00:42:24
   from 'C:\xampp\htdocs\proyectos\PDO\Peliculas\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc126dfb49530_23052021',
+  'unifunc' => 'content_5bc66950b31478_44372513',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40e2826fa9611a856e5b24f70b3e7686a9e7fa75' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Peliculas\\templates\\header.tpl',
-      1 => 1539385031,
+      1 => 1539729587,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc126dfb49530_23052021 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc66950b31478_44372513 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -43,7 +43,8 @@ function content_5bc126dfb49530_23052021 (Smarty_Internal_Template $_smarty_tpl)
 >Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Estrenos</a>
+        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['root']->value;?>
+/estrenos">Estrenos</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

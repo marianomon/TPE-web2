@@ -15,7 +15,21 @@ class PeliculasView
     $this->Smarty->assign('Peliculas',$Peliculas);
     $this->Smarty->assign('Generos',$Generos);
     $this->Smarty->display('templates/home.tpl');
+  }
 
+  function GeneroFiltradoAdmin($Titulo, $Peliculas, $Generos, $GeneroSeleccionado){
+    $this->Smarty->assign('Peliculas',$Peliculas);
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('Generos',$Generos);
+    $this->Smarty->assign('GeneroSeleccionado',$GeneroSeleccionado);
+    $this->Smarty->display('templates/GeneroFiltradoAdmin.tpl');
+  }
+
+
+  function MostrarFormularioAgregarPelicula($Titulo, $Generos){
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('Generos',$Generos);
+    $this->Smarty->display('templates/AgregarPelicula.tpl');
   }
 
   function MostrarAdmin($Titulo, $Peliculas, $Generos){
@@ -25,8 +39,14 @@ class PeliculasView
     $this->Smarty->display('templates/homeadmin.tpl');
   }
 
-  function MostrarPeliculaAdmin($Titulo, $Peliculas, $Generos){
+  function MostrarPelicula($Titulo, $Peliculas, $Generos){
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('Peliculas',$Peliculas);
+    $this->Smarty->assign('Generos',$Generos);
+    $this->Smarty->display('templates/Pelicula.tpl');
+  }
 
+  function MostrarPeliculaAdmin($Titulo, $Peliculas, $Generos){
     $this->Smarty->assign('Titulo',$Titulo);
     $this->Smarty->assign('Peliculas',$Peliculas);
     $this->Smarty->assign('Generos',$Generos);
@@ -39,6 +59,13 @@ class PeliculasView
     $this->Smarty->assign('Generos',$Generos);
     $this->Smarty->assign('GeneroSeleccionado',$GeneroSeleccionado);
     $this->Smarty->display('templates/PagTerror.tpl');
+  }
+
+  function MostrarEstrenosView($Titulo, $PeliculasEstrenos, $Generos){
+    $this->Smarty->assign('PeliculasEstrenos',$PeliculasEstrenos);
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('Generos',$Generos);
+    $this->Smarty->display('templates/Estrenos.tpl');
   }
 }
   ?>

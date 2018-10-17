@@ -40,7 +40,13 @@ class PelisModel
   function BorrarPelicula($id_pelicula){
     $sentencia = $this->db->prepare( "delete from pelicula where id_pelicula=?");
     $sentencia->execute(array($id_pelicula));
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]) . "/admin");
+    header(HOMEADMIN);
+  }
+
+  function AgregarPeliculamodel($genero,$nombre,$sinopsis,$actores,$estreno,$iFrame){
+    $sentencia = $this->db->prepare( "insert into pelicula (id_genero, nombre, sinopsis, actores, iFrame, estreno) values (?,?,?,?,?,?)");
+    $sentencia->execute(array($genero,$nombre,$sinopsis,$actores,$iFrame,$estreno));
+    header(HOMEADMIN);
   }
 
   function MostrarPeliculaAdmin($id_pelicula){
@@ -49,9 +55,9 @@ class PelisModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function ActualizarMovie($id_pelicula, $sinopsis){
-    $sentencia = $this->db->prepare( "update pelicula set sinopsis=? where id_pelicula=?");
-    $sentencia->execute(array($sinopsis, $id_pelicula[0]));
+  function ActualizarMovie($id_pelicula, $genero, $nombre, $sinopsis, $actores, $iFrame){
+    $sentencia = $this->db->prepare("update pelicula set id_genero=?, nombre=?, sinopsis=?, actores=?, iFrame=? where id_pelicula=?");
+    $sentencia->execute(array($genero, $nombre, $sinopsis, $actores, $iFrame, $id_pelicula[0]));
     header(HOME . "/PeliculaSeleccionadaAdmin/$id_pelicula[0]");
   }
 
@@ -64,6 +70,13 @@ class PelisModel
     $sentencia = $this->db->prepare( "update tarea set completada=1 where id=?");
     $sentencia->execute(array($id_tarea));
     header(HOME);
+  }
+
+  function BuscarEstrenos(){
+    $sentencia = $this->db->prepare( "select * from pelicula where estreno=1");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
   }
 }
 

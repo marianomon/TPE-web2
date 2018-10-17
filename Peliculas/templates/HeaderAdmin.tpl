@@ -19,7 +19,7 @@
         <a class="nav-link" href={$root}/admin>Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Estrenos</a>
+        <a class="nav-link" href="{$root}/estrenos">Estrenos</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,7 +28,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
           {foreach from=$Generos item=genero}
-            <a class="dropdown-item" href="genero/{$genero['id_genero']}"> {$genero['nombre']}</a>
+            <a class="dropdown-item" href="{$root}/generoAdmin/{$genero['id_genero']}"> {$genero['nombre']}</a>
             <div class="dropdown-divider"></div>
 
           {/foreach}
@@ -38,12 +38,9 @@
         <a class="nav-link disabled" href="#">Sobre MisPelis</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="AgregarPelicula">Agregar Pelicula</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="EliminarPelicula">Eliminar Pelicula</a>
+        <a class="nav-link" href="{$root}/FormularioAgregarPelicula">Agregar Pelicula</a>
       </li>
     </ul>
-      <a type="button" href="LogOut" class="btn btn-primary nav-link">LogOut</a>
+      <a type="button" href={$root}/LogOut class="btn btn-primary nav-link">LogOut</a>
   </div>
 </nav>

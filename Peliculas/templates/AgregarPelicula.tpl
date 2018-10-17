@@ -1,60 +1,52 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type"text/css" href="../Peliculas/CSS/Stle.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="home">MisPelis</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{include file="HeaderAdmin.tpl"}
+<div class="container-fluid FondoGrisOscuro">
+  <h1 class="LetrasBlancas">Agregar Pelicula</h1>
+  <div class="row justify-content-md-center">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Estrenos</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Género
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-          {foreach from=$Generos item=genero}
-            <a class="dropdown-item" href="{$genero['nombre']}"> {$genero['nombre']}</a>
-            <div class="dropdown-divider"></div>
-
-          {/foreach}
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Sobre MisPelis</a>
-      </li>
-    </ul>
-      <a type="button" href="LogIn" class="btn btn-success nav-link">LogIn</a>
-  </div>
-</nav>
-<div class="container">
-        <form method="post" action="verificarLogin">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Usuario</label>
-            <input type="input" class="form-control" id="usuario" name="usuario" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <form method="post" action="AgregarPelicula" class="col-4 FondoGrisOscuro">
+          <div class="form-group padding15px">
+            <input type="input" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Insertar Nombre de la Pelicula...">
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Password">
-            {$Mensaje_Error}
+          <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01" name="genero">
+                    <option selected>Elegir Genero</option>
+                    {foreach from=$Generos item=genero}
+                    <option value="{$genero['id_genero']}">{$genero['nombre']}</option>
+                    {/foreach}
+
+                  </select>
+                </div>
+
+          <div class="input-group padding15px">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Sinopsis</span>
+            </div>
+            <textarea class="form-control" aria-label="Sinopsis" name="sinopsis" placeholder="Inserte Sinopsis"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">LogIn</button>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Actores</span>
+            </div>
+              <input type="text" name="actores" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Inserte los Actores">
+            </div>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck1" name="EstrenoCheck">
+              <label class="custom-control-label LetrasBlancas" for="customCheck1">¿Es un Estreno?</label>
+            </div>
+
+            <div class="input-group padding15px">
+              <div class="input-group-prepend">
+                <span class="input-group-text">iFrame</span>
+              </div>
+              <textarea class="form-control" aria-label="iFrame" name="iFrame" placeholder="Coloque aquí el iFrame"></textarea>
+            </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
+      </div>
 
   </div>
 </div>

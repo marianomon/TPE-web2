@@ -7,8 +7,12 @@
   <div class="row justify-content-md-center">
     {foreach from=$Peliculas item=pelicula}
           <div class="col-2 RecuadroPelicula">
-            <img class="imagendepelicula" src="../imagenes/{$pelicula['nombre']}.jpg" alt="">
-            {$pelicula['nombre']}
+            <a href="{$root}/PeliculaSeleccionada/{$pelicula['id_pelicula']}">
+              <img class="imagendepelicula" src="../imagenes/{$pelicula['id_pelicula']}.jpg" alt="">
+              <div class="TituloPelicula">
+                {$pelicula['nombre']}
+              </div>
+            </a>
           </div>
         {/foreach}
   </div>

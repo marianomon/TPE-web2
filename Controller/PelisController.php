@@ -30,23 +30,24 @@ function GenerarGenero($PARAMS){
   $this->view->PaginaTerror($this->Titulo, $Peliculas, $Generos, $GeneroSeleccionado);
 }
 
-
-function AgregarPelicula(){
+function PeliculaSeleccionada($param){
+  $Peliculas = $this->model->MostrarPeliculaAdmin($param);
+  $Generos = $this->model->GetGeneros();
+  $this->view->MostrarPelicula($this->Titulo, $Peliculas, $Generos);
 
 }
 
+function MostrarEstrenos(){
+  $PeliculasEstrenos = $this->model->BuscarEstrenos();
+  $Generos = $this->model->GetGeneros();
+  $this->view->MostrarEstrenosView($this->Titulo, $PeliculasEstrenos, $Generos);
+}
 
-  function InsertTarea(){
-    $titulo = $_POST["TituloForm"];
-    $descripcion = $_POST["DescripcionForm"];
-    if (isset($_POST["CompletadaForm"])) {
-      $completada = 1;
-    }else {
-      $completada = 0;
-    }
-    $this->model->InsertTarea($titulo,$descripcion,$completada);
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
-  }
+
+
+
+
+
 
   // function MostrarPeliculaAdmin($param){
   //   $Peliculas = $this->model->MostrarPeliculaAdmin($param[0]);

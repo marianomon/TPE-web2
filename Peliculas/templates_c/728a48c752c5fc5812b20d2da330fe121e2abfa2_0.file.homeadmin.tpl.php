@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-13 01:18:52
+/* Smarty version 3.1.33, created on 2018-10-13 06:31:55
   from 'C:\xampp\htdocs\proyectos\PDO\Peliculas\templates\homeadmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc12bdcb9dc00_83183528',
+  'unifunc' => 'content_5bc1753b9f4d18_16548608',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '728a48c752c5fc5812b20d2da330fe121e2abfa2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\PDO\\Peliculas\\templates\\homeadmin.tpl',
-      1 => 1539386331,
+      1 => 1539403984,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:HeaderAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_5bc12bdcb9dc00_83183528 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc1753b9f4d18_16548608 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:HeaderAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div class="container-fluid contenedor FondoGrisOscuro">
   <h1 class="Titulo LetrasBlancas"><?php echo $_smarty_tpl->tpl_vars['Titulo']->value;?>
 </h1>
-  <div class="row">
+  <div class="row justify-content-md-center">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Peliculas']->value, 'pelicula');
 if ($_from !== null) {
@@ -39,13 +39,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['pelicula']->value) {
 ">
               Borrar
             </a>
-              <a href="PeliculaSeleccionadaAdmin/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['id_pelicula'];?>
+              <a class="TituloPelicula" href="PeliculaSeleccionadaAdmin/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['id_pelicula'];?>
 ">
-                <img class="imagendepelicula" src="imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
+                <img class="imagendepelicula" src="imagenes/<?php echo $_smarty_tpl->tpl_vars['pelicula']->value['id_pelicula'];?>
 .jpg" alt="">
-              </a>
               <?php echo $_smarty_tpl->tpl_vars['pelicula']->value['nombre'];?>
 
+            </a>
           </div>
         <?php
 }
